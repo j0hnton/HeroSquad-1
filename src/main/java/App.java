@@ -37,9 +37,9 @@ public class App {
             return new ModelAndView(model, layout);
         }, new VelocityTemplateEngine());
 
-        get("/display", (request, response) -> {
+        get("/hero", (request, response) -> {
             Map<String, Object> model = new HashMap<String, Object>();
-            model.put("template", "public/templates/display.vtl");
+            model.put("template", "public/templates/hero.vtl");
             return new ModelAndView(model, layout);
         }, new VelocityTemplateEngine());
     }
