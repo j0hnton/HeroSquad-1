@@ -1,0 +1,21 @@
+    <div class="container">
+        <form method="post" action="/hero">
+            <div class="form-group">
+                <label for="sname">Enter the name of the squad</label>
+                <input type="text" id="sname" name="sname" class="form-control">
+            </div>
+            <div class="form-group">
+                <label for="size">Enter the maximum size of the squad</label>
+                <input type="number" id="size" name="size" class="form-control">
+            </div>
+            <div class="form-group">
+                <label for="cause">Example select</label>
+                <select class="form-control" id="cause">
+                      <option value="mugging">Mugging</option>
+                      <option value="homicide">Homicide</option>
+                      <option value="domination">World domination</option>
+                    </select>
+            </div>
+            <button type="submit" class="btn btn-primary">Add heroes</button>
+        </form>
+    </div>
