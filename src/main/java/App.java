@@ -43,5 +43,27 @@ public class App {
             return new ModelAndView(model, layout);
         }, new VelocityTemplateEngine());
 
+
+        post("heroesData", (request, response) -> {
+            Map<String, Object> model = new HashMap<String, Object>();
+            String name = request.queryParams("name");
+            String age = request.queryParams("age");
+            String superpower = request.queryParams("superpower");
+            String weakness = request.queryParams("weakness");
+            Hero hero = new Hero(name, age, superpower, weakness);
+            model.put("template", "public/templates/display.vtl");
+            return new ModelAndView(model, layout);
+        }, new VelocityTemplateEngine());
+
+
+        post("squadssData", (request, response) -> {
+            Map<String, Object> model = new HashMap<String, Object>();
+            String name = request.queryParams("sname");
+            String size = request.queryParams("size");
+            String cause = request.queryParams("cause");
+            Squad squad = new Squad(name, size, cause);
+            model.put("template", "public/templates/display.vtl");
+            return new ModelAndView(model, layout);
+        }, new VelocityTemplateEngine());
     }
 }
