@@ -1,0 +1,16 @@
+body{
+  background-image: url('photos/squad.jpg');
+  color:white;
+  align-items: center;
+  font-size: 2em;
+}
+
+h1{
+  font-family: 'Aclonica', sans-serif;
+  font-size: 1.5em;
+}
+
+.form-control{
+  width: 25em;
+}
+
