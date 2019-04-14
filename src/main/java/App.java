@@ -50,8 +50,9 @@ public class App {
             String age = request.queryParams("age");
             String superpower = request.queryParams("superpower");
             String weakness = request.queryParams("weakness");
-            Hero hero = new Hero(name, age, superpower, weakness);
-            model.put("template", "public/templates/display.vtl");
+            Hero newhero = new Hero(name, age, superpower, weakness);
+            request.session().attribute("hero", newhero);
+            model.put("template", "public/templates/success.vtl");
             return new ModelAndView(model, layout);
         }, new VelocityTemplateEngine());
 
@@ -62,7 +63,8 @@ public class App {
             String size = request.queryParams("size");
             String cause = request.queryParams("cause");
             Squad squad = new Squad(name, size, cause);
-            model.put("template", "public/templates/display.vtl");
+            request.session().attribute("squad", squad);
+            model.put("template", "public/templates/success.vtl");
             return new ModelAndView(model, layout);
         }, new VelocityTemplateEngine());
     }
