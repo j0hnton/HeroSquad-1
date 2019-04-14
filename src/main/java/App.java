@@ -42,5 +42,6 @@ public class App {
             model.put("template", "public/templates/hero.vtl");
             return new ModelAndView(model, layout);
         }, new VelocityTemplateEngine());
+
     }
 }
