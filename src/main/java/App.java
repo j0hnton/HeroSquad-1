@@ -36,13 +36,14 @@ public class App {
 
         post("/display", (request, response) -> {
             Map<String, Object> model = new HashMap<String, Object>();
+            ArrayList<Hero> heroes =  request.session().attribute("hero");
             String name = request.queryParams("name");
             String age = request.queryParams("age");
             String superpower = request.queryParams("superpower");
             String weakness = request.queryParams("weakness");
             String cause = request.queryParams("cause");
             Hero newhero = new Hero(name, age, superpower, weakness, cause);
-            request.session().attribute("hero", newhero);
+            heroes.add(newhero);
             model.put("template", "public/templates/display.vtl");
             return new ModelAndView(model, layout);
         }, new VelocityTemplateEngine());
