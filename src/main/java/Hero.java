@@ -7,7 +7,6 @@ public class Hero {
     private String mSuperpower;
     private String mWeakness;
     private  String mCause;
-    private static List<Hero> instances = new ArrayList<Hero>();
 
     public Hero(String name, String age, String superpower, String weakness ,String cause) {
         mName = name;
@@ -15,7 +14,6 @@ public class Hero {
         mSuperpower = superpower;
         mWeakness = weakness;
         mCause= cause;
-        instances.add(this);
     }
 
     public String getmName() {
@@ -38,9 +36,7 @@ public class Hero {
         return mCause;
     }
 
-    public static List<Hero> all() {
-        return instances;
-    }
+
 
 }
 
