@@ -4,7 +4,7 @@ public class Hero {
     private String mSuperpower;
     private String mWeakness;
     private  String mCause;
-    public Hero(String cause, String name, String age, String superpower, String weakness) {
+    public Hero(String name, String age, String superpower, String weakness ,String cause) {
         mName = name;
         mAge = age;
         mSuperpower = superpower;
