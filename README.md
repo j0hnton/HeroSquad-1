@@ -38,5 +38,5 @@ Some of the known bugs include:
 ## Licencing
 ```
 MIT License
-[MIT Licence](https://choosealicense.com/licenses/mit/)
+<https://choosealicense.com/licenses/mit/>
 ```
