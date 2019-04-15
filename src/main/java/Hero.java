@@ -15,7 +15,6 @@ public class Hero {
         mWeakness = weakness;
         mCause= cause;
     }
-
     public String getmName() {
         return mName;
     }

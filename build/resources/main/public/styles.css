@@ -3,6 +3,8 @@ body{
   color:white;
   align-items: center;
   font-size: 2em;
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 
 h1{
