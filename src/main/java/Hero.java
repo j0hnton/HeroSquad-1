@@ -3,12 +3,13 @@ public class Hero {
     private String mAge;
     private String mSuperpower;
     private String mWeakness;
-
-    public Hero(String name, String age, String superpower, String weakness) {
+    private  String mCause;
+    public Hero(String cause, String name, String age, String superpower, String weakness) {
         mName = name;
         mAge = age;
         mSuperpower = superpower;
         mWeakness = weakness;
+        mCause= cause;
     }
 
     public String getmName() {
@@ -25,5 +26,9 @@ public class Hero {
 
     public String getmWeakness() {
         return mWeakness;
+    }
+
+    public String getmCause() {
+        return mCause;
     }
 }
