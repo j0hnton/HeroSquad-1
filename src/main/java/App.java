@@ -28,7 +28,7 @@ public class App {
 
         get("/squad", (request, response) -> {
             Map<String, Object> model = new HashMap<String, Object>();
-            model.put("hero", request.session().attribute("hero"));
+            model.put("heroes", request.session().attribute("heroes"));
             model.put("template", "public/templates/squad.vtl");
             return new ModelAndView(model, layout);
         }, new VelocityTemplateEngine());
@@ -41,7 +41,7 @@ public class App {
 
             if (heroes == null) {
                 heroes = new ArrayList<Hero>();
-                request.session().attribute("heros", heroes);
+                request.session().attribute("heroes", heroes);
             }
 
             String name = request.queryParams("name");

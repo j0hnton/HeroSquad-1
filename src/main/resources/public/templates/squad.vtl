@@ -1,9 +1,22 @@
     <div class="container">
      <h1>My Squad </h1>
-        <h3> $hero.getmName() </h3>
-        <h3> $hero.getmAge() </h3>
-        <h3> $hero.getmSuperpower()</h3>
-        <h3> $hero.getmWeakness() </h3>
-        <h3> $hero.getmCause() </h3>
-        <a href='/hero'>Add heroes</a>
+     <table>
+     <tr>
+      <th> Name </th>
+      <th> Age </th>
+      <th> Super Power </th>
+       <th> Weakness </th>
+       <th> Cause </th>
+       </tr>
+       <tr>
+     #foreach ($hero in $heroes)
+        <td> $hero.getmName() </td>
+        <td> $hero.getmAge() </td>
+        <td> $hero.getmSuperpower()</td>
+        <td> $hero.getmWeakness() </td>
+        <td> $hero.getmCause() </td>
+        </tr>
+        #end
+        </table>
+         <a href='/hero'>Add heroes</a>
     </div>

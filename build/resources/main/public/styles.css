@@ -14,3 +14,10 @@ h1{
   width: 25em;
 }
 
+th,
+tr,
+td{
+  margin: 2px solid white;
+  width: 10em;
+}
+
