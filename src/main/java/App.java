@@ -30,7 +30,21 @@ public class App {
         }, new VelocityTemplateEngine());
 
 
-        post("/heros", (request,response) -> {
+//        post("/heros", (request,response) -> {
+//            Map<String, Object> model = new HashMap<String, Object>();
+//            Squad squad = Squad.find(Integer.parseInt(request.queryParams("squadId")));
+//            String name = request.queryParams("name");
+//            String age= request.queryParams("age");
+//            String superpower = request.queryParams("superpower");
+//            String weakness = request.queryParams("weakness");
+//            Hero newHero = new Hero(name, age, superpower,weakness);
+//            squad.addHero(newHero);
+//            model.put("squad", squad);
+//            model.put("template", "public/templates/squad-heros-success.vtl");
+//            return new ModelAndView(model, layout);
+//        }, new VelocityTemplateEngine());
+
+        post("/heros", (request, response) -> {
             Map<String, Object> model = new HashMap<String, Object>();
             Squad squad = Squad.find(Integer.parseInt(request.queryParams("squadId")));
             String name = request.queryParams("name");
@@ -38,7 +52,13 @@ public class App {
             String superpower = request.queryParams("superpower");
             String weakness = request.queryParams("weakness");
             Hero newHero = new Hero(name, age, superpower,weakness);
-            squad.addHero(newHero);
+            if (Squad.heroAlreadyExists(newHero)) {
+                String heroExists = "Hero " + name + " already exists in a squad";
+                model.put("heroExists", heroExists);
+            }
+            else{
+                squad.addHero(newHero);
+            }
             model.put("squad", squad);
             model.put("template", "public/templates/squad-heros-success.vtl");
             return new ModelAndView(model, layout);

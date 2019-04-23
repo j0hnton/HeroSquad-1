@@ -6,8 +6,8 @@ public class Squad {
      private String mCause;
      private String mMax;
      private static List<Squad> instances = new ArrayList<Squad>();
-    private List<Hero> mHeros;
-    private int mId;
+     private List<Hero> mHeros;
+     private int mId;
 
     public Squad(String name, String cause, String max) {
         mName = name;
@@ -16,6 +16,18 @@ public class Squad {
         instances.add(this);
         mHeros = new ArrayList<Hero>();
         mId = instances.size();
+    }
+
+    public static boolean heroAlreadyExists(Hero newHero) {
+        boolean exists = false;
+        for(Squad squad: instances){
+            for(Hero hero: squad.getHeros()){
+                if (hero.getName().equals(newHero.getName())) {
+                    exists = true;
+                }
+            }
+        }
+        return exists;
     }
 
     public static void clear() {
