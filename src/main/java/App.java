@@ -9,6 +9,15 @@ public class App {
         staticFileLocation("/public");
         String layout = "public/templates/layout.vtl";
 
+        ProcessBuilder process = new ProcessBuilder();
+        Integer port;
+        if (process.environment().get("PORT") != null) {
+            port = Integer.parseInt(process.environment().get("PORT"));
+        } else {
+            port = 4567;
+        }
+
+        (port);
 
         get("/", (request, response) -> {
             Map<String, Object> model = new HashMap<String, Object>();
@@ -29,20 +38,6 @@ public class App {
             return new ModelAndView(model, layout);
         }, new VelocityTemplateEngine());
 
-
-//        post("/heros", (request,response) -> {
-//            Map<String, Object> model = new HashMap<String, Object>();
-//            Squad squad = Squad.find(Integer.parseInt(request.queryParams("squadId")));
-//            String name = request.queryParams("name");
-//            String age= request.queryParams("age");
-//            String superpower = request.queryParams("superpower");
-//            String weakness = request.queryParams("weakness");
-//            Hero newHero = new Hero(name, age, superpower,weakness);
-//            squad.addHero(newHero);
-//            model.put("squad", squad);
-//            model.put("template", "public/templates/squad-heros-success.vtl");
-//            return new ModelAndView(model, layout);
-//        }, new VelocityTemplateEngine());
 
         post("/heros", (request, response) -> {
             Map<String, Object> model = new HashMap<String, Object>();
