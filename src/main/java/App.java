@@ -17,7 +17,7 @@ public class App {
             port = 4567;
         }
 
-        port(4567);
+        port(port);
 
         get("/", (request, response) -> {
             Map<String, Object> model = new HashMap<String, Object>();
