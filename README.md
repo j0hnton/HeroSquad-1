@@ -19,14 +19,13 @@ The contributors of this project were:
 
 
 ## B-D-D
-```
+
 | Input                                | Behaviour                                        | Output                                      |
 |--------------------------------------|--------------------------------------------------|---------------------------------------------|
 | The user requests for page           | The application searches for the index file      | The user is presented with the landing page |
 | The user clicks "Add hero"           | The application looks for the input form.        | The user is given a form to fill            |
 | The user clicks "Submit"             | The application retrieves the user's data        | The user's data is stored.                  |
-| The user requests for the squad data | The application looks for the squad information. | The user is given the squad data.           |
-```
+| The user requests for the squad data | The application looks for the squad information. | The user is given the squad data.           
 
 ## Know bugs
 ```
